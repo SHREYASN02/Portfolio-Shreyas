@@ -345,78 +345,7 @@ formInputs.forEach(input => {
     });
 });
 
-// ===== DOWNLOAD RESUME FUNCTIONALITY =====
-/**
- * Handles resume download
- * Note: This is a placeholder - you need to add your actual resume file
- */
-const downloadResumeBtn = document.getElementById('download-resume');
-if (downloadResumeBtn) {
-    downloadResumeBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Create a simple text resume as a fallback
-        const resumeContent = `
-SHREYAS N
-Python Full Stack Developer
 
-Contact:
-Email: edigashreyasn02@gmail.com
-Phone: +91-8073054833
-Location: Bengaluru, 560064
-LinkedIn: linkedin.com/in/shreyasnsvit
-GitHub: github.com/SHREYASN02
-
-EDUCATION:
-B.E - Computer Science Engineering with specialization in Data Science
-Visvesvaraya Technological University (VTU) - Sai Vidya Institute of Technology
-Dec 2021 - May 2025 | CGPA: 8.44/10.00
-
-SKILLS:
-- Languages & Frameworks: Python, Django, SQL, Flask, FastAPI
-- Web Development: HTML, CSS, JavaScript
-- AI/ML: Machine Learning, Generative AI
-- Operating Systems: Linux, Windows
-
-EXPERIENCE:
-Python Full Stack Developer Intern | Global Quest Technologies (Jun 2025 - Sep 2025)
-- Developed ML-based web applications using Python, Flask, and ML libraries
-- Built end-to-end ML pipelines from data preprocessing to deployment
-- Created responsive front-end interfaces with HTML, CSS, and JavaScript
-
-Web Development Intern | QSpiders (Sep 2023 - Nov 2023)
-- Developed user-friendly web pages using HTML, CSS, and JavaScript
-- Collaborated on real-world front-end projects
-
-PROJECTS:
-1. AuthPrivacyChain - Blockchain-based access control framework
-2. Pneumonia Detection Using CNN - 92.07% accuracy in medical image classification
-
-CERTIFICATIONS:
-- Python for Beginners - Microsoft Learn
-- OCI AI Foundations Associate - Oracle
-- OCI Generative AI Professional - Oracle
-
-ACHIEVEMENTS:
-- Technical Coordinator for Tech Vidya 2023 at SVIT
-- Rotaract SVIT volunteer
-`;
-        
-        // Create blob and download
-        const blob = new Blob([resumeContent], { type: 'text/plain' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'Shreyas_N_Resume.txt';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-        
-        // Note: Replace this with actual PDF download if you have a resume PDF
-        alert('Resume downloaded! Note: For a professional PDF resume, please replace this with your actual resume file.');
-    });
-}
 
 // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
 /**
